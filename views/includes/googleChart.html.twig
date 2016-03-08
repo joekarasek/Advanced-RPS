@@ -13,24 +13,26 @@ function drawPieChart(playerId) {
   console.log(urlTargeted);
   console.log(typeof urlTargeted);
   $.ajax({
-    url: "data/1",
+    url: "/data/1",
     dataType:"json"
   }).done(function(response) {
     // Convert JSON to Array
-    var result = [['Hand' , 'Times Played:']];
+    var dataArray = [['Hand' , 'Times Played:']];
     for(var key in response) {
-      result.push([ key, response[key] ]);
+      dataArray.push([ key, response[key] ]);
     }
+    console.log(1);
     // console.log('request done', response);
-    console.log('array produced', result);
     // Set options for display
     var options = {
           title: 'Number of Hand Types Played',
           width: 800,
           height: 400
         };
+    console.log('array produced', dataArray);
     // Create our data table out of JSON data loaded from server and converted to array
-    var data = google.visualization.arrayToDataTable(result);
+    var data = google.visualization.arrayToDataTable(dataArray);
+    console.log(2);
 
     // Create selector to target chart location on page
     var selector = document.getElementById('chart_div');
