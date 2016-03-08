@@ -6,29 +6,34 @@
 google.load('visualization', '1', {'packages':['corechart']});
 
 // Set a callback to run when the Google Visualization API is loaded.
-google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(drawPieChart);
 
-function drawChart() {
-  console.log(0);
+function drawPieChart() {
   $.ajax({
     url: "/data",
     dataType:"json"
   }).done(function(response) {
-    console.log(1);
+    // Convert JSON to Array
+    var result = [['Hand' , 'Times Played:']];
+    for(var key in response) {
+      result.push([ key, response[key] ]);
+    }
     // console.log('request done', response);
-    // Create our data table out of JSON data loaded from server.
-    var data = new google.visualization.DataTable(response);
+    // console.log('array produced', result);
+    // Set options for display
+    var options = {
+          title: 'Number of Hand Types Played',
+          width: 800,
+          height: 400
+        };
+    // Create our data table out of JSON data loaded from server and converted to array
+    var data = google.visualization.arrayToDataTable(result);
+
     // Create selector to target chart location on page
     var selector = document.getElementById('chart_div');
     // Instantiate and draw our chart, passing in some options.
-    var chart = new google.visualization.ColumnChart(selector);
-    chart.draw(data, {width: 800, height: 400});
+    var chart = new google.visualization.PieChart(selector);
+    chart.draw(data, options);
   });
-
-  console.log(2);
-
 }
-
-console.log(3);
-
 </script>

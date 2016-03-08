@@ -129,8 +129,27 @@
 								],
 								"rows": [' . $result;
 					$data_string_mid_trimmed = rtrim($data_string_mid, ',');
-					$data_string_mid_trimmed .= ']}';
-					return $data_string_mid_trimmed;
+					$data_string_final .= ']}';
+					return $data_string_final;
+			}
+
+			function pieGraphData($hand_data)
+			{
+					// $result = '';
+					// foreach ($hand_data as $key => $value) {
+					// 	$result .= '{"c":[{"v":"' . $key . '","f":null},{"v":' . $value . ',"f":null}]},';
+					// }
+					// $data_string_mid = '{
+					// 			"cols": [
+					// 				{"id":"","label":"","pattern":"","type":"string"},
+					// 				{"id":"","label":"Framework","pattern":"","type":"number"}
+					// 			],
+					// 			"rows": [' . $result;
+					// $data_string_mid_trimmed = rtrim($data_string_mid, ',');
+					// $data_string_mid_trimmed .= ']}';
+					// return $data_string_mid_trimmed;
+					$json = json_encode($hand_data);
+					return $json;
 			}
 
 			static function getAll()

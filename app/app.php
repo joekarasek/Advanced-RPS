@@ -72,7 +72,7 @@
     $app->get("/data", function() use ($app){
       $player1 = Player::findById($_SESSION['player_one']['id']);
       $player1_data = $player1->getTotalHands();
-      return $player1->barGraphData($player1_data);
+      return $player1->pieGraphData($player1_data);
     });
 
     $app->get("/showdata", function() use ($app){
