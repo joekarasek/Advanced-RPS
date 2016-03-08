@@ -69,8 +69,8 @@
         return $app['twig']->render('game.html.twig', array('player1' => $_SESSION['player_one'], 'player2' => $_SESSION['player_two'], 'format'=>$_SESSION['match_type']));
     });
 
-    $app->get("/data", function() use ($app){
-      $player1 = Player::findById($_SESSION['player_one']['id']);
+    $app->get("/data/{id}", function($id) use ($app){
+      $player1 = Player::findById($id);
       $player1_data = $player1->getTotalHands();
       return $player1->pieGraphData($player1_data);
     });

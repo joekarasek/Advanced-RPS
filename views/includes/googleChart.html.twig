@@ -6,11 +6,14 @@
 google.load('visualization', '1', {'packages':['corechart']});
 
 // Set a callback to run when the Google Visualization API is loaded.
-google.setOnLoadCallback(drawPieChart);
+google.setOnLoadCallback(drawPieChart('1'));
 
-function drawPieChart() {
+function drawPieChart(playerId) {
+  var urlTargeted = "/data/" + playerId;
+  console.log(urlTargeted);
+  console.log(typeof urlTargeted);
   $.ajax({
-    url: "/data",
+    url: "data/1",
     dataType:"json"
   }).done(function(response) {
     // Convert JSON to Array
@@ -19,7 +22,7 @@ function drawPieChart() {
       result.push([ key, response[key] ]);
     }
     // console.log('request done', response);
-    // console.log('array produced', result);
+    console.log('array produced', result);
     // Set options for display
     var options = {
           title: 'Number of Hand Types Played',
