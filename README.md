@@ -2,13 +2,13 @@
 
 #### _Advanced version of Paper Rock Scissors , 2016-03-10_
 
-#### By _**Joe Karasek, Michael Lor, Aundra Miller, Nic Netzel **_
+#### By _**Joe Karasek, Michael Lor, Aundra Miller, Nic Netzel**_
 
 ## Description
 
 **Rock Paper Scissors 7** _is an PHP/Silex based web-app game developed by a team of 4 developers over the course of one week. This application allows users to play a version of Rock, Paper, Scissors that has 7 instead of 3 choices: 'Air', 'Water', 'Fire', and 'Sponge' are added to the classic mix of 'Rock', 'Paper', and 'Scissors'. Game modes include Freeplay, Best of 1, Best of 3, Best of 5, Best of 7, and Best of 73. Users can create an account, sign-in, and sign-out. Game statistics are stored and players can see their stats, compare their stats to the computer, and view a leaderboard of all players' results._
 
-_This application was built by a team of four junior developers at the culmination of the level 2 PHP course at [Epicodus](http://www.epicodus.com/). To build this web-app, we applied our newly gained knowledge of PHP, the Silex framework, phpUnit, and mySQL. We also used a range of css frameworks and the Google Charts API._
+_This application was completed as a capstone of the level 2 PHP course at [Epicodus](http://www.epicodus.com/). To build this web-app, we applied our newly gained knowledge of PHP, the Silex framework, phpUnit, and mySQL. We also used a range of css frameworks and the Google Charts API._
 
 _To see our latest work, please checkout our personal portfolios..._
 
@@ -17,20 +17,29 @@ _To see our latest work, please checkout our personal portfolios..._
 * Aundra Miller [GitHub](https://milleraundra.github.io/)
 * Nic Netzel [GitHub](https://netzeln.github.io/)
 
-## Setup/Installation Requirements
+## Setup/Installation
+
+### Requirements
+
+* [Composer](https://getcomposer.org/)
+* [PHP](http://php.net/)
+* [mySQL](https://www.mysql.com/)
+
+### Setup
 
 1. The dependencies for this project are managed using [Composer](https://getcomposer.org/). In terminal run the following command to install project dependencies:
         composer install
-2. You will need to run a local server to host the site. From the project root, run the following terminal commands:
+2. You will need to run a local server to host the site, including your DB server. From the project root, run the following terminal commands:
 
         cd web
-        php -s localhost:8000
+        mysql.server start
+        php -S localhost:8000
 
 3. Open the directory http://localhost:8000 in any standard web browser.
 
-### SQL commands
+### SQL Database
 
-A SQL database is included with the repo. However, you use the following mySQL commands to setup your own version of the database:
+A SQL database is included with the repo as a zip file. However, you can use the following mySQL commands to setup your own version of the database:
 
     CREATE DATABASE rps;
     USE rps;
@@ -58,20 +67,24 @@ PHPUnit is included with the dependencies for this project. To run phpunit, use 
 ## Technologies Used
 
 
-* _Composer_
-* _Twig_
-* _Silex_
-* _PHP_
-* _PHPUnit_
-* _mySQL_
-* _Google Charts API_
+* [Composer](https://getcomposer.org/)
+* [Twig](http://twig.sensiolabs.org/)
+* [Silex](http://silex.sensiolabs.org/)
+* [PHP](http://php.net/)
+* [PHPUnit](https://phpunit.de/)
+* [mySQL](https://www.mysql.com/)
+* [Google Charts API](https://developers.google.com/chart/)
 
 
 ### License
 
-*{an MIT licesnse (unless someone has a better option)}*
-
 Copyright (c) 2016 **_Joe Karasek, Michael Lor, Aundra Miller, Nic Netzel_**
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Graphics Copyright (c) 2016 **_Michael Lor_**
 
